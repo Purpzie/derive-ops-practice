@@ -17,11 +17,11 @@ jobs:
       - name: Check
         run: cargo check --all-targets --all-features
       - name: Test
-        if: ${{ always() && steps.Check.outcome == "success" }}
+        if: ${{ always() && steps.Check.outcome == 'success' }}
         run: cargo test --all-targets --all-features --no-fail-fast
       - name: Clippy
-        if: ${{ always() && steps.Check.outcome == "success" }}
+        if: ${{ always() && steps.Check.outcome == 'success' }}
         run: cargo clippy --all-targets --all-features -- -D warnings
       - name: Fmt
-        if: ${{ always() && steps.Check.outcome == "success" }}
+        if: ${{ always() && steps.Check.outcome == 'success' }}
         run: cargo fmt -- --check
