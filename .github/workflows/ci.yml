@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install rust
         uses: actions-rs/toolchain@v1
-        with: { override: true }
+        with: { toolchain: stable, override: true }
       - name: Check
         run: cargo check --all-targets --all-features
       - name: Cache for next jobs
@@ -34,6 +34,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install rust
         uses: actions-rs/toolchain@v1
+        with: { toolchain: stable, override: true }
       - name: Grab cache
         uses: actions/cache@v2
         with:
@@ -54,6 +55,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install rust
         uses: actions-rs/toolchain@v1
+        with: { toolchain: stable, override: true }
       - name: Grab cache
         uses: actions/cache@v2
         with:
@@ -74,6 +76,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install rust
         uses: actions-rs/toolchain@v1
+        with: { toolchain: stable, override: true }
       - name: Grab cache
         uses: actions/cache@v2
         with:
