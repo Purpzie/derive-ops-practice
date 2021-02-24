@@ -1,9 +1,9 @@
 #![allow(unused)]
 #![allow(non_snake_case)]
 
+use core::ops::*;
 use ops_derive::*;
 use rand::distributions::{Distribution, Uniform};
-use core::ops::*;
 
 #[num]
 #[derive(Debug, PartialEq)]
@@ -35,9 +35,9 @@ macro_rules! test {
                 let two = range.sample(&mut rng);
 
                 if let Some(num) = one.$method(two) {
-                    let mut foo = Foo(one);
-                    foo $op_assign Foo(two);
-                    assert_eq!(foo, Foo(one $op two));
+                    let mut foo_obj = Foo(one);
+                    foo_obj $op_assign Foo(two);
+                    assert_eq!(foo_obj, Foo(one $op two));
                 }
             }
         }

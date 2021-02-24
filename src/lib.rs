@@ -58,7 +58,8 @@ struct NoAdd;
 #[derive(Add)]
 struct Foo(NoAdd);
 ```*/
-#[cfg(doctest)] struct op_all_fields_need_trait;
+#[cfg(doctest)]
+struct op_all_fields_need_trait;
 
 /**```compile_fail
 use ops_derive::*;
@@ -68,7 +69,8 @@ struct NoAddAssign;
 #[derive(AddAssign)]
 struct Foo(NoAddAssign);
 ```*/
-#[cfg(doctest)] struct assign_all_fields_need_trait;
+#[cfg(doctest)]
+struct assign_all_fields_need_trait;
 
 /**```compile_fail
 use ops_derive::*;
@@ -76,7 +78,8 @@ use ops_derive::*;
 #[derive(Add)]
 enum NotAStruct {}
 ```*/
-#[cfg(doctest)] struct op_must_be_struct;
+#[cfg(doctest)]
+struct op_must_be_struct;
 
 /**```compile_fail
 use ops_derive::*;
@@ -84,7 +87,8 @@ use ops_derive::*;
 #[derive(AddAssign)]
 enum NotAStruct {}
 */
-#[cfg(doctest)] struct assign_must_be_struct;
+#[cfg(doctest)]
+struct assign_must_be_struct;
 
 /**```compile_fail
 use ops_derive::*;
@@ -99,7 +103,8 @@ fn main() {
     assert_eq!(one + two, Foo("can't add strings together"));
 }
 ```*/
-#[cfg(doctest)] struct op_just_in_case;
+#[cfg(doctest)]
+struct op_just_in_case;
 
 /**```compile_fail
 use ops_derive::*;
@@ -114,4 +119,5 @@ fn main() {
     assert_eq!(one, Foo("can't add strings together"));
 }
 ```*/
-#[cfg(doctest)] struct assign_just_in_case;
+#[cfg(doctest)]
+struct assign_just_in_case;
