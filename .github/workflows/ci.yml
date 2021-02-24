@@ -25,7 +25,7 @@ jobs:
           path: |
             target
             ~/.cargo/registry
-            ~/.cargo/.git
+            ~/.cargo/git
 
   test:
     name: Test
@@ -44,7 +44,7 @@ jobs:
           path: |
             target
             ~/.cargo/registry
-            ~/.cargo/.git
+            ~/.cargo/git
       - name: Test
         run: cargo test --all-targets --all-features --no-fail-fast
 
@@ -65,7 +65,7 @@ jobs:
           path: |
             target
             ~/.cargo/registry
-            ~/.cargo/.git
+            ~/.cargo/git
       - name: Clippy
         run: cargo clippy --all-targets --all-features -- -D warnings
 
@@ -86,6 +86,6 @@ jobs:
           path: |
             target
             ~/.cargo/registry
-            ~/.cargo/.git
+            ~/.cargo/git
       - name: Fmt
         run: cargo fmt -- --check
